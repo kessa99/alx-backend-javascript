@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "jest",
-    "dev": "node src/0-main.js",
+    "dev": "node 0-main.js",
     "lint": "eslint ."
   },
   "jest": {
