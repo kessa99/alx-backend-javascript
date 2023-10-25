@@ -1,1 +1,1 @@
-Uderstand the congiguration od eslint, jest and babel
+understand jest eslint and babel
