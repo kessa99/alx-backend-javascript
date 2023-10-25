@@ -2,10 +2,10 @@
   "name": "0x00-es6_basic",
   "version": "1.0.0",
   "main": "0-main.js",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "test": "jest",
-    "dev": "node src/0-main.js"
+    "dev": "node 0-main.js"
   },
   "jest": {
     "transform": {
