@@ -3,7 +3,7 @@ const { taskFirst, taskNext } = require('./0-constants');
 
 test('use const not var', () => {
   const result = taskFirst();
-  expect(result).toMatch(/^I prefer const when I can[.]?$/);
+  expect(result).toBe('I prefer const when I can.');
 });
 test('use let not var', () => {
   const result = taskNext();
