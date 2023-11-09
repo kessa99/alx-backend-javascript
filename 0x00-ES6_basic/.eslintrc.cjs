@@ -23,7 +23,7 @@ module.exports = {
     ecmaVersion: 'latest',
   },
   rules: {
-    'import/extensions': ['error', 'ignorePackages', { 'js': 'never', 'json': 'always' }],
+    'import/extensions': ['error', 'ignorePackages', { js: 'never', json: 'always' }],
     'no-console': 'off',
   },
 };
