@@ -5,8 +5,8 @@
   "main": "1-main.js",
   "type": "module",
   "scripts": {
-    "test": "jest",
-    "dev": "node 1-main.js",
+    "test": "jest 0-constants.test.js",
+    "dev": "node",
     "lint": "eslint ."
   },
   "jest": {
