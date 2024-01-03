@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-const { taskFirst, taskNext } = require('./0-constants');
+const { taskFirst, taskNext } = require('./0-constants.js');
 
 test('use const not var', () => {
   const result = taskFirst();
