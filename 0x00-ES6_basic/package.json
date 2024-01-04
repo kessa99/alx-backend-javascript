@@ -7,7 +7,7 @@
   "scripts": {
     "test": "jest 0-constants.test.js",
     "dev": "node",
-    "lint": "eslint . 1-block-scoped.js"
+    "lint": "eslint ."
   },
   "jest": {
     "transform": {
