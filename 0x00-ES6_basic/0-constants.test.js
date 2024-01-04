@@ -1,11 +1,7 @@
 #!/usr/bin/env node
-const { taskFirst, taskNext } = require('./0-constants.js');
+import { taskFirst, taskNext } from './0-constants.js';
 
-test('use const not var', () => {
-  const result = taskFirst();
-  expect(result).toBe('I prefer const when I can.');
-});
-test('use let not var', () => {
-  const result = taskNext();
-  expect(result).toBe('But sometimes let is okay');
+test('tasks are correctly defined and used', () => {
+  const result = `${taskFirst()} ${taskNext()}`;
+  expect(result).toEqual('I prefer const when I can. But sometimes let is okay');
 });
