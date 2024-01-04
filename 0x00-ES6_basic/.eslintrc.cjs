@@ -25,5 +25,8 @@ module.exports = {
   rules: {
     'import/extensions': ['error', 'ignorePackages', { js: 'always', json: 'always' }],
     'no-console': 'off',
+    'prefer-const': ['error', { destructuring: 'all', ignoreReadBeforeAssign: true }],
+    'no-shadow': 'error',
+    'quote-props': ['error', 'as-needed'],
   },
 };
