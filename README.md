@@ -1,1 +1,2 @@
-# alx-backend-javascript
+0x00-basicES6
+0x01-ES6_promise
