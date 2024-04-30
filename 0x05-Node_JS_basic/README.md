@@ -1,7 +1,7 @@
-NodeJs Basic
+# NodeJs Basic
 
-*** Excecuting basic Javascript with NodeJs **
-* print with STDOUT *
+## Excecuting basic Javascript with NodeJs
+* print with STDOUT 
 
 ```javascript
 function displayMessage(msg) {
@@ -9,12 +9,12 @@ function displayMessage(msg) {
 }
 ```
 
-*  for test *
+*  for test 
 ```javascript
 npx eslint 0-console.js
 ```
 
-* for fix simple test *
+* for fix simple test 
 ```javascript
 npx elsint 0-console.js --fix
 ```
