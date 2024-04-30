@@ -1,6 +1,6 @@
 NodeJs Basic
 
-*** Excecuting basic Javascript with NodeJs ***
+*** Excecuting basic Javascript with NodeJs **
 * print with STDOUT *
 
 ```javascript
