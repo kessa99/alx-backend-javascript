@@ -15,6 +15,12 @@ function displayMessage(msg) {
 }
 ```
 
+* print with arrow function
+```javascript
+const displayMessage = (msg) => {
+  return console.log(msg);
+}
+```
 *  for test 
 ```javascript
 npx eslint 0-console.js
