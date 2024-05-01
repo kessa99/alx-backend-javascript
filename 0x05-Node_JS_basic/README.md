@@ -2,10 +2,16 @@
 
 ## Excecuting basic Javascript with NodeJs
 * print with STDOUT 
-
 ```javascript
 function displayMessage(msg) {
   process.sdtout.write(msg + '\n')
+}
+```
+
+* print with console.log
+```javascript
+function displayMessage(msg) {
+  console.log(msg);
 }
 ```
 
