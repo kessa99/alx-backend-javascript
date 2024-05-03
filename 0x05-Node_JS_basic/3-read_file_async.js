@@ -15,10 +15,8 @@ function countStudents(path) {
             countStudents += 1;
             if (!fields[field]) {
               fields[field] = [fname];
-            } else if (Array.esArray(fields[field])) {
-              fields[field].push(fname);
             } else {
-              throw new Error(`Unexpected data structure for field ${field}`);
+              fields[field].push(fname);
             }
           }
         }
