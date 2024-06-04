@@ -1,41 +1,30 @@
 const fs = require('fs');
 
-function countStudents(path) {
+const countStudents = (path) => {
   try {
-    const results = fs.readFileSync(path, { encoding: 'utf8' }).split(/\r?\n/);
-    const lines = results;
-    let i = 0;
-    let countStudents = 0;
-    const fields = {};
-    for (const line of lines) {
-      if (line.trim() !== '' && i > 0) {
-        countStudents += 1;
-        const [fname, lname, age, field] = line.split(',');
-        console.log(`Nom: ${lname}, Âge: ${age}`);
-        if (!fields[field]) {
-          fields[field] = {
-            count: 1,
-            students: [fname],
-          };
-        } else {
-          const newCount = fields[field].count + 1;
-          const newStudents = (fields[field].students).concat(fname);
-          fields[field] = {
-            count: newCount,
-            students: newStudents,
-          };
-        }
+    const data = fs.readFileSync(path, 'utf-8');
+    const students = [];
+    const fields = new Set();
+    const lines = data.trim().split('\n');
+    const newlines = [];
+    for(let i = 1; i < lines.length; i++) {
+      newlines.push(lines[i]);
+    }
+    newlines.forEach(ys => {
+      const line = ys.split(',');
+      if (line.length === 4) {
+        fields.add(line[3]);
+        students.push(line);
       }
-      i += 1;
-    }
-    console.log(`Number of students: ${countStudents}`);
-    for (const field of Object.keys(fields)) {
-      const n = fields[field].count;
-      const names = fields[field].students.join(', ');
-      console.log(`Number of students in ${field}: ${n}. List: ${names}`);
-    }
+    });
+    console.log(`Number of students: ${students.length}`);
+    fields.forEach(elt => {
+      const studie = students.map(ps => ps[3] === elt);
+      const names = studie.map(ps => ps[0]);
+      console.log(`Number of students in ${elt}: ${studie.length}. List: ${names.join(', ')}`);
+    });
   } catch (error) {
-    throw new Error('connot load the database');
+    throw new Error('Cannot load the database');
   }
 }
 
