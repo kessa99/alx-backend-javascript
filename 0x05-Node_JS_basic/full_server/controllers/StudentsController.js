@@ -4,6 +4,11 @@ export default class StudentsController {
     static async getAllStudents(req, res) {
         const database = req.query.database;
 
+        if(!database) {
+            res.status(400).send('Missing database parameter');
+            return;
+        }
+
         try {
             const students = await readDatabase(database);
             let response = 'This is the list of our students\n';
@@ -18,7 +23,7 @@ export default class StudentsController {
 
     static async getAllStudentsByMajor(req, res) {
         const database = req.query.database;
-        const { major } = req.params;
+        const major= req.params.major;
 
         if (major !== 'CS' && major !== 'SWE') {
             res.status(500).send('Major parameter must be CS or SWE');
@@ -27,13 +32,10 @@ export default class StudentsController {
 
         try {
             const students = await readDatabase(database);
-            if (students[major]) {
-                res.status(200).send(`List: ${students[major].join(', ')}`);
-            } else {
-                res.status(200).send('List: ');
-            }
+            const studentList = students[major] || [];
+            res.status(200).send(`List: ${stdentList.json(', ')}`);
         } catch (error) {
-            res.status(500).send('Cannot load the database');
+            res.status(500).send('cannot load the database');
         }
     }
 }

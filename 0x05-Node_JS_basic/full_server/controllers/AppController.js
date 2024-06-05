@@ -1,7 +1,5 @@
 module.exports = class AppController {
     static getHomepage(req, res) {
-        res.statusCode = 200;
-        res.end('Hello Holberton School!');
-        return res;
+        res.status(200).send('Hello Holberton School!');
     }
 };
