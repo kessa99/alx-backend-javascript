@@ -1,7 +1,7 @@
 {
-  "name": "0x05-node_js_basic",
+  "name": "node_js_basics",
   "version": "1.0.0",
-  "description": "## 1-EXECUTING BASIC JAVASCRIPT WITH NODEJS * print with STDOUT  ```javascript function displayMessage(msg) {   process.sdtout.write(msg + '\\n') } ```",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "lint": "./node_modules/.bin/eslint",
@@ -11,18 +11,21 @@
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@babel/cli": "^7.24.6",
-    "@babel/preset-env": "^7.24.6",
-    "@eslint/js": "^9.4.0",
-    "chai": "^5.1.1",
-    "eslint": "^9.4.0",
-    "globals": "^15.3.0",
-    "nodemon": "^3.1.3"
-  },
   "dependencies": {
-    "eslint-plugin-jest": "^28.5.0",
-    "mocha": "^10.4.0",
-    "sinon": "^18.0.0"
+    "chai-http": "^4.3.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "nodemon": "^2.0.2",
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.17.0",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2",
+    "request": "^2.88.0",
+    "sinon": "^7.5.0"
   }
 }
