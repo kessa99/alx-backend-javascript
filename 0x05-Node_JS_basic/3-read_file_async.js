@@ -10,7 +10,7 @@ const countStudents = (path) => new Promise((resolve, reject) => {
     console.log('CSV file content:', data);
 
     const lines = data.trim().split('\n');
-    console.log('Number of lines:', lines.lenght);
+    console.log('Number of lines:', lines.length);
     const students = {};
 
     lines.forEach((line, index) => {
