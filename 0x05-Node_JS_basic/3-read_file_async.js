@@ -10,10 +10,15 @@ const  countStudents = (path) => {
         return;
       }
 
+      console.log('CSV file content:', data);
+
       const lines = data.trim().split('\n');
+      console.log('Number of lines:', lines.length);
       const students = {};
 
-      lines.forEach((line) => {
+      lines.forEach((line, index) => {
+        console.log('Line:', index + 1, line);
+        if (index === 0) return;
         const [firstname, , , field] = line.split(',');
         if (firstname && field) {
           if (!students[field]) {
@@ -24,7 +29,7 @@ const  countStudents = (path) => {
       });
 
       const fields = Object.keys(students);
-      let result = `Number of students: ${lines.ength - 1}\n`;
+      let result = `Number of students: ${lines.length - 1}\n`;
       fields.forEach((field) => {
         result += `Number of students in ${field}: ${students[field].length}. List: ${students[field].join(', ')}\n`;
       });
