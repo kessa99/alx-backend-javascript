@@ -1,9 +1,9 @@
 const express = require('express');
+const countStudents = require('./3-read_file_async');
 
 const port = 1245;
 const hostname = 'localhost';
 const app = express();
-const countStudents = require('./3-read_file_async');
 
 app.get('/', (req, res) => {
   res.set('Content-Type', 'text/plain');
@@ -12,7 +12,13 @@ app.get('/', (req, res) => {
 
 app.get('/students', (req, res) => {
   res.set('Content-Type', 'text/plain');
-  countStudents(process.argv[2])
+  const databasePath = process.argv[2];
+  if (!databasePath) {
+    res.status(500).send('Database file not found');
+    return;
+  }
+
+  countStudents(databasePath)
     .then((data) => {
       res.send(data);
     })
