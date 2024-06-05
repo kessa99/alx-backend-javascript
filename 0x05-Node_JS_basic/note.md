@@ -7,3 +7,8 @@ npm install --save-dev chai
 
 npm install --save-dev mocha
 
+
+
+
+npm install eslint eslint-plugin-jest eslint-config-airbnb-base eslint-plugin-import --save-dev
+
