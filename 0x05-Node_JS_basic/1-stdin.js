@@ -8,4 +8,4 @@ process.stdin.on('readable', () => {
 });
 process.stdin.on('end', () => {
   process.stdout.write('this important software is now closing\n');
-}); 
+});
