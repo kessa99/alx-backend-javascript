@@ -30,14 +30,14 @@ const countStudents = (path) => new Promise((resolve, reject) => {
       }
     });
 
-    console.log(`Number of students: ${totalStudents}`);
+    let result = `Number of students: ${totalStudents}`;
     for (const field in students) {
       if (Object.prototype.hasOwnProperty.call(students, field)) {
         const list = students[field].join(', ');
-        console.log(`Number of students in ${field}: ${students[field].length}. List: ${list}`);
+        result = `Number of students in ${field}: ${students[field].length}. List: ${list}`;
       }
     }
-    resolve();
+    resolve(result);
   });
 });
 
