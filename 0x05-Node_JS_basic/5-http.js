@@ -15,8 +15,7 @@ const app = http.createServer((req, res) => {
   } else if (req.url === '/students') {
     res.write('This is the list of our students\n');
     countStudents(process.argv[2])
-      .then((data) => {
-        res.write(data);
+      .then(() => {
         res.end();
       })
       .catch((error) => {
