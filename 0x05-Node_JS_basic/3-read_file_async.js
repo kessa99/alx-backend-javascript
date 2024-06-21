@@ -7,30 +7,37 @@ const countStudents = (path) => new Promise((resolve, reject) => {
       return;
     }
 
-    console.log('CSV file content:', data);
+    // console.log('CSV file content:', data);
 
-    const lines = data.trim().split('\n');
-    console.log('Number of lines:', lines.length);
+    const lines = data.trim().split('\n').filter((line) => line.trim() !== '');
+    if (lines.length === 0) {
+      reject(new Error('Cannot load the database'));
+      return;
+    }
+
+    lines.shift();
     const students = {};
+    let totalStudents = 0;
 
-    lines.forEach((line, index) => {
-      console.log('Line:', index + 1, line);
-      if (index === 0) return;
+    lines.forEach((line) => {
       const [firstname, , , field] = line.split(',');
       if (firstname && field) {
         if (!students[field]) {
           students[field] = [];
         }
         students[field].push(firstname);
+        totalStudents += 1;
       }
     });
 
-    const fields = Object.keys(students);
-    let result = `Number of students: ${lines.length - 1}\n`;
-    fields.forEach((field) => {
-      result += `Number of students in ${field}: ${students[field].length}. List: ${students[field].join(', ')}\n`;
-    });
-    resolve(result);
+    console.log(`Number of students: ${totalStudents}`);
+    for (const field in students) {
+      if (Object.prototype.hasOwnProperty.call(students, field)) {
+        const list = students[field].join(', ');
+        console.log(`Number of students in ${field}: ${students[field].length}. List: ${list}`);
+      }
+    }
+    resolve();
   });
 });
 
