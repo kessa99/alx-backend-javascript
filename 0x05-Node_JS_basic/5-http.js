@@ -14,7 +14,7 @@ const app = http.createServer((req, res) => {
     res.end();
   } else if (req.url === '/students') {
     res.write('This is the list of our students\n');
-    console.log(`Database file path: ${process.argv[2]}`)
+    console.log(`Database file path: ${process.argv[2]}`);
     countStudents(process.argv[2])
       .then((data) => {
         res.write(data);
